@@ -63,13 +63,54 @@
   gap: 10px;
 }
 
-.qty-input {
-  width: 70px;
-  padding: 8px;
+/* Hide default arrows */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.qty-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.qty-control {
+  display: flex;
+  align-items: center;
   border: 1px solid #ccc;
   border-radius: var(--border-radius-sm);
+  overflow: hidden;
+  height: 35px;
+}
+
+.qty-btn {
+  background: var(--color-bg-light);
+  border: none;
+  width: 30px;
+  height: 100%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--color-text-dark);
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qty-btn:hover {
+  background: #e2e8f0;
+}
+
+.qty-input {
+  width: 45px;
+  height: 100%;
+  border: none;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
   text-align: center;
   font-family: inherit;
+  padding: 0;
+  border-radius: 0;
 }
 
 .item-actions .unit {

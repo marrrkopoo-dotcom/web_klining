@@ -28,6 +28,19 @@ export class Cart {
     this.priceItems.forEach(item => {
       const btnAdd = item.querySelector('.btn-add');
       const inputQty = item.querySelector('.qty-input');
+      const btnMinus = item.querySelector('.qty-btn.minus');
+      const btnPlus = item.querySelector('.qty-btn.plus');
+
+      if (btnMinus && btnPlus && inputQty) {
+        btnMinus.addEventListener('click', () => {
+          let val = parseInt(inputQty.value) || 0;
+          if (val > 0) inputQty.value = val - 1;
+        });
+        btnPlus.addEventListener('click', () => {
+          let val = parseInt(inputQty.value) || 0;
+          inputQty.value = val + 1;
+        });
+      }
       
       btnAdd.addEventListener('click', () => {
         const id = item.dataset.id;
