@@ -1,5 +1,6 @@
 import { Menu } from './components/Menu.js';
 import { Modal } from './components/Modal.js';
+import { Cart } from './components/Cart.js';
 
 export class App {
   constructor() {
@@ -12,5 +13,8 @@ export class App {
 
     // Initialize Call Modal
     this.callModal = new Modal('.modal-overlay', '.open-modal', '.modal-close');
+
+    // Initialize Shopping Cart
+    this.cart = new Cart();
   }
 }
