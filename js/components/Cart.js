@@ -2,7 +2,7 @@ import { Notification } from './Notification.js';
 
 export class Cart {
   constructor() {
-    this.items = {}; // { id: { name, price, qty, unit, total } }
+    this.items = JSON.parse(localStorage.getItem('cartItems')) || {}; // { id: { name, price, qty, unit, total } }
     this.notification = new Notification();
     this.init();
   }
@@ -86,6 +86,10 @@ export class Cart {
     }
   }
 
+  saveCart() {
+    localStorage.setItem('cartItems', JSON.stringify(this.items));
+  }
+
   addItem(id, name, price, qty, unit) {
     if (this.items[id]) {
       this.items[id].qty += qty;
@@ -93,16 +97,19 @@ export class Cart {
       this.items[id] = { name, price, qty, unit };
     }
     this.items[id].total = this.items[id].price * this.items[id].qty;
+    this.saveCart();
     this.updateUI();
   }
 
   removeItem(id) {
     delete this.items[id];
+    this.saveCart();
     this.updateUI();
   }
 
   clearCart() {
     this.items = {};
+    this.saveCart();
     this.updateUI();
   }
 

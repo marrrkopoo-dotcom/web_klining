@@ -62,10 +62,10 @@ export class FormHandler {
       });
 
       if (response.ok) {
-        this.notification.show('Ваша заявка успішно відправлена!', 'success');
         this.form.reset();
         this.cart.clearCart();
         this.modal.close();
+        window.location.href = 'success.html';
       } else {
         throw new Error('Помилка відправки в Telegram');
       }
