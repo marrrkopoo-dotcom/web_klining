@@ -20,16 +20,29 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: var(--color-primary-dark);
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.logo span {
+.logo-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  line-height: 1;
+}
+
+.logo-title span {
   color: var(--color-accent);
+}
+
+.logo-subtitle {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+  margin-top: 4px;
 }
 
 .nav-links {
