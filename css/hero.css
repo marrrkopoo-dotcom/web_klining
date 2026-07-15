@@ -1,61 +1,86 @@
 /* Hero Section */
 .hero {
   position: relative;
-  min-height: 100vh;
+  padding-top: 100px;
+  padding-bottom: 50px;
+  background: var(--color-bg-light);
+}
+
+.va-poslugi-top {
   display: flex;
   align-items: center;
-  padding-top: 80px;
-  background: url('../assets/img/hero.png') center/cover no-repeat;
-  color: var(--color-text-light);
+  gap: var(--spacing-xl);
+  flex-wrap: wrap-reverse;
 }
 
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
+.va-poslugi-top__img {
+  flex: 1;
+  min-width: 300px;
+}
+
+.va-poslugi-top__img img {
   width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%);
-  z-index: 1;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  object-fit: cover;
 }
 
-.hero .container {
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0;
+.va-poslugi-top__text {
+  flex: 1;
+  min-width: 300px;
+  color: var(--color-text-dark);
 }
 
-.hero h1 {
+.va-poslugi-top__text h1 {
   font-size: var(--font-size-h1);
   font-weight: 800;
+  margin-bottom: var(--spacing-lg);
   line-height: 1.1;
-  margin-bottom: var(--spacing-md);
-  text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  color: var(--color-primary-dark);
 }
 
-.hero h1 span {
+.va-poslugi-top__text h1 span {
   color: var(--color-secondary);
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: var(--spacing-lg);
-  opacity: 0.9;
-  max-width: 600px;
+.va-poslugi-top__text .callback,
+.va-poslugi-top__text .call-bc {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--border-radius-md);
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-fast);
+  margin-right: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
 }
 
-.hero-buttons {
-  display: flex;
-  gap: var(--spacing-md);
+.va-poslugi-top__text .callback {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-text-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.va-poslugi-top__text .callback:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.va-poslugi-top__text a.call-bc {
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+}
+
+.va-poslugi-top__text a.call-bc:hover {
+  background: var(--color-primary);
+  color: var(--color-text-light);
 }
 
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2.5rem;
+  .va-poslugi-top {
+    gap: var(--spacing-lg);
   }
-  .hero-buttons {
-    flex-direction: column;
+  .va-poslugi-top__text h1 {
+    font-size: 2.5rem;
   }
 }
