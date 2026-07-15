@@ -25,9 +25,9 @@
 }
 
 .pricing-list {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-sm);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--spacing-md);
 }
 
 .price-item {
