@@ -19,15 +19,15 @@
   <!-- Header -->
   <header class="header">
     <div class="container">
-      <a href="index.html" class="logo">
+      <a href="#" class="logo">
         <div class="logo-title">Клінко<span>.</span></div>
         <div class="logo-subtitle">clean service</div>
       </a>
       <nav class="nav-links">
-        <a href="about.html">Про нас</a>
-        <a href="services.html">Послуги</a>
-        <a href="services.html">Ціни</a>
-        <a href="index.html#advantages">Переваги</a>
+        <a href="#about-us">Про нас</a>
+        <a href="#services">Послуги</a>
+        <a href="#pricing">Ціни</a>
+        <a href="#advantages">Переваги</a>
         <a href="#contacts">Контакти</a>
       </nav>
       <div class="header-actions">
@@ -44,10 +44,10 @@
 
   <!-- Mobile Navigation -->
   <nav class="nav-mobile">
-    <a href="about.html">Про нас</a>
-    <a href="services.html">Послуги</a>
-    <a href="services.html">Ціни</a>
-    <a href="index.html#advantages">Переваги</a>
+    <a href="#about-us">Про нас</a>
+    <a href="#services">Послуги</a>
+    <a href="#pricing">Ціни</a>
+    <a href="#advantages">Переваги</a>
     <a href="#contacts">Контакти</a>
     <a href="tel:0800332309" class="phone-link">0 800 33 23 09</a>
     <button class="btn btn-primary open-modal" data-subject="Замовити дзвінок (Мобільне меню)">Замовити дзвінок</button>
@@ -62,9 +62,248 @@
         </div>
         <div class="va-poslugi-top__text">
           <h1 style="line-height: 110%;"><span></span><br> <span>Клінінг</span><br>у Полтаві</h1>
-          <span class="callback call-bc open-modal" style="cursor: pointer;" data-subject="Замовити консультацію">Замовити консультацію</span>
-          <a href="services.html" title="Замовити Клінінг у Полтаві" class="call-bc btn btn-primary" style="margin-left: 10px;">Прайс послуг</a>
+          <span class="callback call-bc open-modal" style="cursor: pointer;" data-subject="Замовити консультацію (Банер)">Замовити консультацію</span>
+          <a href="#pricing" title="Замовити Клінінг у Полтаві" class="call-bc btn btn-primary" style="margin-left: 10px;">Прайс послуг</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section with Interactive Cart -->
+  <section class="section pricing" id="pricing">
+    <div class="container">
+      <h2 class="section-title">Наші ціни та послуги</h2>
+      <p class="pricing-subtitle">Виберіть необхідні послуги, вкажіть площу або кількість, і ми розрахуємо вартість.</p>
+      
+      <div class="pricing-categories">
+        
+        <!-- Категорія: Прибирання -->
+        <div class="pricing-category">
+          <h3>Прибирання</h3>
+          <div class="pricing-list">
+            <div class="price-item" data-id="clean-1" data-price="110" data-unit="м²" data-name="Прибирання після ремонту без меблів">
+              <div class="item-info">
+                <h4>Прибирання після ремонту без меблів</h4>
+                <span class="price-tag">110 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="clean-2" data-price="130" data-unit="м²" data-name="Прибирання після ремонту з меблями">
+              <div class="item-info">
+                <h4>Прибирання після ремонту з меблями</h4>
+                <span class="price-tag">130 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="clean-3" data-price="39" data-unit="м²" data-name="Підтримуюче базове прибирання">
+              <div class="item-info">
+                <h4>Підтримуюче базове</h4>
+                <span class="price-tag">від 39 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="clean-4" data-price="55" data-unit="м²" data-name="Генеральне прибирання">
+              <div class="item-info">
+                <h4>Генеральне</h4>
+                <span class="price-tag">від 55 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Категорія: Миття вікон -->
+        <div class="pricing-category">
+          <h3>Миття вікон та фасадів</h3>
+          <div class="pricing-list">
+            <div class="price-item" data-id="win-1" data-price="66" data-unit="м²" data-name="Базове миття вікон">
+              <div class="item-info">
+                <h4>Базове миття вікон</h4>
+                <span class="price-tag">від 66 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="win-2" data-price="99" data-unit="м²" data-name="Миття вікон після ремонту">
+              <div class="item-info">
+                <h4>Миття вікон після ремонту</h4>
+                <span class="price-tag">від 99 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="win-3" data-price="140" data-unit="м²" data-name="Висотне миття вікон">
+              <div class="item-info">
+                <h4>Висотне миття вікон</h4>
+                <span class="price-tag">від 140 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="win-4" data-price="44" data-unit="м²" data-name="Миття вітрин">
+              <div class="item-info">
+                <h4>Миття вітрин</h4>
+                <span class="price-tag">від 44 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="win-5" data-price="55" data-unit="м²" data-name="Миття фасадів будинків">
+              <div class="item-info">
+                <h4>Миття фасадів будинків</h4>
+                <span class="price-tag">55 грн / м²</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">м²</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Категорія: Хімчистка матраців -->
+        <div class="pricing-category">
+          <h3>Хімчистка матраців</h3>
+          <div class="pricing-list">
+            <div class="price-item" data-id="mat-1" data-price="880" data-unit="шт" data-name="Матрац дитячий">
+              <div class="item-info">
+                <h4>Матрац дитячий</h4>
+                <span class="price-tag">880 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="mat-2" data-price="1320" data-unit="шт" data-name="Матрац одинарний">
+              <div class="item-info">
+                <h4>Матрац одинарний</h4>
+                <span class="price-tag">1320 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="mat-3" data-price="1650" data-unit="шт" data-name="Матрац двоспальний">
+              <div class="item-info">
+                <h4>Матрац двоспальний</h4>
+                <span class="price-tag">1650 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="mat-4" data-price="2200" data-unit="шт" data-name="Матрац Євро">
+              <div class="item-info">
+                <h4>Матрац Євро</h4>
+                <span class="price-tag">2200 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Категорія: Хімчистка меблів -->
+        <div class="pricing-category">
+          <h3>Хімчистка м'яких меблів</h3>
+          <div class="pricing-list">
+            <div class="price-item" data-id="meb-1" data-price="1650" data-unit="шт" data-name="Диван прямий Чистка">
+              <div class="item-info">
+                <h4>Диван прямий Чистка</h4>
+                <span class="price-tag">1650 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="meb-2" data-price="2200" data-unit="шт" data-name="Диван кутовий Чистка">
+              <div class="item-info">
+                <h4>Диван кутовий Чистка</h4>
+                <span class="price-tag">2200 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="meb-3" data-price="660" data-unit="шт" data-name="Крісло м'яке">
+              <div class="item-info">
+                <h4>Крісло м'яке, Крісло-фотель</h4>
+                <span class="price-tag">660 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+            <div class="price-item" data-id="meb-4" data-price="275" data-unit="шт" data-name="Стілець з м'яким сидінням">
+              <div class="item-info">
+                <h4>Стілець з м'яким сидінням</h4>
+                <span class="price-tag">275 грн / шт</span>
+              </div>
+              <div class="item-actions">
+                <div class="qty-control"><button type="button" class="qty-btn minus">-</button><input type="number" min="0" value="0" class="qty-input"><button type="button" class="qty-btn plus">+</button></div>
+                <span class="unit">шт</span>
+                <button class="btn-add">Додати</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section about-us" id="about-us">
+    <div class="container">
+      <h2 class="section-title">Про нас</h2>
+      <div class="about-text" style="color: var(--color-text-dark); line-height: 1.6; max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem; padding-bottom: 40px;">
+        <p style="margin-bottom: 20px;">Клінінг - це послуга, що включає професійне очищення приміщень, меблів, килимів та інших поверхонь за допомогою спеціальних засобів. У процесі використовуються безпечні розчини, які дозволяють ефективно видаляти забруднення та плями. Ця послуга забезпечує делікатне очищення, зберігаючи якість матеріалів.</p>
+        <p style="margin-bottom: 20px;">Як вивести стійкі плями та не зіпсувати при цьому речі? Яким чином освіжити та відчистити від забруднень поверхні після ремонту? Вирішити ці та багато інших задач можна разом з «Клінко».</p>
+        <p>«Клінко» – це сучасна компанія, що працює у Полтаві та постійно вдосконалює якість роботи і сервісу. За багато років роботи ми відчистили, освіжили та повернули до життя тисячі об'єктів. Довірте порятунок своїх речей професіоналам!</p>
       </div>
     </div>
   </section>
