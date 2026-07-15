@@ -1,6 +1,9 @@
+import { Notification } from './Notification.js';
+
 export class Cart {
   constructor() {
     this.items = {}; // { id: { name, price, qty, unit, total } }
+    this.notification = new Notification();
     this.init();
   }
 
@@ -35,7 +38,9 @@ export class Cart {
 
         if (qty > 0) {
           this.addItem(id, name, price, qty, unit);
-          // Optional: visual feedback
+          // Visual feedback via Notification
+          this.notification.show(`${name} додано до кошика!`, 'success');
+          
           btnAdd.textContent = "Додано!";
           btnAdd.style.background = "#28a745";
           setTimeout(() => {
@@ -43,7 +48,7 @@ export class Cart {
             btnAdd.style.background = "";
           }, 1000);
         } else {
-          alert(`Будь ласка, вкажіть кількість/площу (${unit})`);
+          this.notification.show(`Будь ласка, вкажіть кількість/площу (${unit})`, 'error');
         }
       });
     });
