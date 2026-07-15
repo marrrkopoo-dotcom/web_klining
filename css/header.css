@@ -99,6 +99,10 @@
   transition: all var(--transition-fast);
 }
 
+.nav-mobile {
+  display: none;
+}
+
 @media (max-width: 992px) {
   .nav-links, .header-actions .btn {
     display: none;
