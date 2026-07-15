@@ -17,7 +17,8 @@ export class Modal {
           // Populate context
           const subject = trigger.getAttribute('data-subject') || 'Замовити послугу';
           if (this.modalTitle) {
-            this.modalTitle.textContent = subject;
+            // Remove text in parentheses for the display title (e.g., "(Банер)")
+            this.modalTitle.textContent = subject.replace(/\s*\(.*?\)\s*/g, '').trim();
           }
 
           // Ensure hidden input exists
