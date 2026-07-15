@@ -67,7 +67,7 @@
 }
 
 .va-poslugi-top__text a.call-bc {
-  background: var(--color-secondary);
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
   color: var(--color-text-light);
   box-shadow: var(--shadow-sm);
   text-decoration: none;
