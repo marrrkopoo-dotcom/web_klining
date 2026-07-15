@@ -88,6 +88,11 @@ export class Cart {
     this.updateUI();
   }
 
+  clearCart() {
+    this.items = {};
+    this.updateUI();
+  }
+
   calculateTotal() {
     let totalSum = 0;
     let totalItems = 0;

@@ -1,6 +1,7 @@
 import { Menu } from './components/Menu.js';
 import { Modal } from './components/Modal.js';
 import { Cart } from './components/Cart.js';
+import { FormHandler } from './components/FormHandler.js';
 
 export class App {
   constructor() {
@@ -16,5 +17,8 @@ export class App {
 
     // Initialize Shopping Cart
     this.cart = new Cart();
+
+    // Initialize Form Handler (Telegram Bot)
+    this.formHandler = new FormHandler(this.cart, this.callModal);
   }
 }
