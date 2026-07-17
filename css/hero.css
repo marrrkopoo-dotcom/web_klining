@@ -3,21 +3,21 @@
   position: relative;
   padding-top: 150px;
   padding-bottom: 100px;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), url('../assets/hero-bg.jpg');
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 40%, rgba(255, 255, 255, 0.9) 70%, rgba(255, 255, 255, 1) 100%), url('../assets/hero-bg.jpg');
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: left center;
+  background-attachment: scroll;
 }
 
 .va-poslugi-top {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .va-poslugi-top__text {
-  max-width: 800px;
-  text-align: center;
+  max-width: 500px;
+  text-align: right;
   color: var(--color-text-dark);
 }
 
@@ -74,8 +74,15 @@
 }
 
 @media (max-width: 768px) {
+  .hero {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.95)), url('../assets/hero-bg.jpg');
+    background-position: center;
+  }
   .va-poslugi-top {
-    gap: var(--spacing-lg);
+    justify-content: center;
+  }
+  .va-poslugi-top__text {
+    text-align: center;
   }
   .va-poslugi-top__text h1 {
     font-size: 2.5rem;
