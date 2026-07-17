@@ -14,10 +14,10 @@ class Notification {
     const notif = document.createElement('div');
     notif.className = `notification notification-${type}`;
     
-    let icon = 'ℹ️';
-    if (type === 'success') icon = '✅';
-    if (type === 'error') icon = '❌';
-    if (type === 'warning') icon = '⚠️';
+    let icon = '';
+    if (type === 'success') icon = '';
+    if (type === 'error') icon = '';
+    if (type === 'warning') icon = '';
 
     notif.innerHTML = `
       <div class="notification-icon">${icon}</div>
@@ -316,11 +316,11 @@ class Cart {
           let val = parseInt(inputQty.value) || 0;
           const unit = item.dataset.unit;
           if (unit === 'м²' && val >= 900) {
-            this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
+            this.notification.show("Максимальна площа для замовлення 900 м²", "error");
             return;
           }
           if (unit === 'шт' && val >= 10) {
-            this.notification.show("Максимальна кількість для одного товару — 10 шт", "error");
+            this.notification.show("Максимальна кількість для одного товару 10 шт", "error");
             return;
           }
           inputQty.value = val + 1;
@@ -331,11 +331,11 @@ class Cart {
           const unit = item.dataset.unit;
           if (unit === 'м²' && val > 900) {
             inputQty.value = 900;
-            this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
+            this.notification.show("Максимальна площа для замовлення 900 м²", "error");
           }
           if (unit === 'шт' && val > 10) {
             inputQty.value = 10;
-            this.notification.show("Максимальна кількість для одного товару — 10 шт", "error");
+            this.notification.show("Максимальна кількість для одного товару 10 шт", "error");
           }
         });
       }
@@ -360,7 +360,7 @@ class Cart {
           const currentItemQty = this.items[id] ? this.items[id].qty : 0;
           if (currentItemQty + qty > 10) {
             const allowed = Math.max(0, 10 - currentItemQty);
-            this.notification.show(`Максимальна кількість для послуги "${name}" — 10 шт. Ви можете додати ще ${allowed} шт.`, "error");
+            this.notification.show(`Максимальна кількість для послуги "${name}" 10 шт. Ви можете додати ще ${allowed} шт.`, "error");
             return;
           }
         }
@@ -570,19 +570,19 @@ class FormHandler {
     submitBtn.disabled = true;
 
     try {
-      let message = `🔔 <b>Нова заявка з сайту Клінко!</b>\n\n`;
-      message += `👤 <b>Ім'я:</b> ${name}\n`;
-      message += `📞 <b>Телефон:</b> +380 ${phone}\n`;
-      message += `🎯 <b>Тема:</b> ${subject}\n`;
+      let message = ` <b>Нова заявка з сайту Клінко!</b>\n\n`;
+      message += ` <b>Ім'я:</b> ${name}\n`;
+      message += ` <b>Телефон:</b> +380 ${phone}\n`;
+      message += ` <b>Тема:</b> ${subject}\n`;
 
       const { totalSum, totalItems } = this.cart.calculateTotal();
       if (totalItems > 0 && subject.includes('кошика')) {
-        message += `\n🛒 <b>Кошик:</b>\n`;
+        message += `\n <b>Кошик:</b>\n`;
         for (const id in this.cart.items) {
           const item = this.cart.items[id];
           message += `- ${item.name} (${item.qty} ${item.unit}) = ${item.total} грн\n`;
         }
-        message += `\n💰 <b>Загальна сума:</b> ${totalSum} грн\n`;
+        message += `\n <b>Загальна сума:</b> ${totalSum} грн\n`;
       }
 
       const response = await fetch(`https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`, {
@@ -777,10 +777,10 @@ class PromoModal {
     submitBtn.disabled = true;
 
     try {
-      let message = `🎁 <b>Нова заявка на ЗНИЖКУ 15%!</b>\n\n`;
-      message += `👤 <b>Ім'я:</b> ${name}\n`;
-      message += `📞 <b>Телефон:</b> +380 ${phone}\n`;
-      message += `🎯 <b>Джерело:</b> ${subject}\n`;
+      let message = ` <b>Нова заявка на ЗНИЖКУ 15%!</b>\n\n`;
+      message += ` <b>Ім'я:</b> ${name}\n`;
+      message += ` <b>Телефон:</b> +380 ${phone}\n`;
+      message += ` <b>Джерело:</b> ${subject}\n`;
 
       const response = await fetch(`https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`, {
         method: 'POST',
