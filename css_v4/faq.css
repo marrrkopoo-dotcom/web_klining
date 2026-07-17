@@ -1,5 +1,8 @@
-/* FAQ Section */
+﻿/* FAQ Section */
 .faq-section {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   padding: 80px 20px;
   background-color: var(--color-bg-light);
 }
