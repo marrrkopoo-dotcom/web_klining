@@ -1,10 +1,10 @@
-import { CookieBanner } from './components/CookieBanner.js?v=3.0';
-import { PromoModal } from './components/PromoModal.js?v=3.0';
-import { Menu } from './components/Menu.js?v=3.0';
-import { Modal } from './components/Modal.js?v=3.0';
-import { Cart } from './components/Cart.js?v=3.0';
-import { FormHandler } from './components/FormHandler.js?v=3.0';
-import { initPhoneInputs } from './utils/validation.js?v=3.0';
+﻿import { CookieBanner } from './components/CookieBanner.js';
+import { PromoModal } from './components/PromoModal.js';
+import { Menu } from './components/Menu.js';
+import { Modal } from './components/Modal.js';
+import { Cart } from './components/Cart.js';
+import { FormHandler } from './components/FormHandler.js';
+import { initPhoneInputs } from './utils/validation.js';
 
 export class App {
   constructor() {

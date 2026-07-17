@@ -1,4 +1,4 @@
-import { App } from './App.js?v=3.0';
+﻿import { App } from './App.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   new App();

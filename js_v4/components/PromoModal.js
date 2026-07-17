@@ -1,5 +1,5 @@
-import { Notification } from './Notification.js?v=3.0';
-import { validateName, validatePhone, showError, clearError, setupRealtimeValidation, initPhoneInputs } from '../utils/validation.js?v=3.0';
+﻿import { Notification } from './Notification.js';
+import { validateName, validatePhone, showError, clearError, setupRealtimeValidation, initPhoneInputs } from '../utils/validation.js';
 
 export class PromoModal {
   constructor() {

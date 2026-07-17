@@ -1,5 +1,5 @@
-import { Notification } from './Notification.js';
-import { validateName, validatePhone, showError, clearError, setupRealtimeValidation } from '../utils/validation.js?v=3.0';
+﻿import { Notification } from './Notification.js';
+import { validateName, validatePhone, showError, clearError, setupRealtimeValidation } from '../utils/validation.js';
 
 export class FormHandler {
   constructor(cart, modal) {
