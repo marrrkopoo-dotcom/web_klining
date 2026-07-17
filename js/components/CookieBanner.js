@@ -1,4 +1,4 @@
-﻿export class CookieBanner {
+export class CookieBanner {
   constructor() {
     this.init();
   }
@@ -19,12 +19,12 @@
   createBanner() {
     this.banner = document.createElement('div');
     this.banner.className = 'cookie-banner';
-    this.banner.innerHTML = \
+    this.banner.innerHTML = `
       <div class="cookie-container">
         <p class="cookie-text">Ми використовуємо файли cookie, щоб аналізувати трафік та підбирати для вас найкращий контент. Продовжуючи користуватись сайтом, ви погоджуєтесь з цим.</p>
         <button class="cookie-btn">Зрозуміло</button>
       </div>
-    \;
+    `;
 
     document.body.appendChild(this.banner);
 

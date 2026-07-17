@@ -1,4 +1,4 @@
-﻿import { Notification } from './Notification.js';
+import { Notification } from './Notification.js';
 
 export class PromoModal {
   constructor() {
@@ -25,7 +25,7 @@ export class PromoModal {
     this.overlay.className = 'modal-overlay';
     this.overlay.id = 'promo-modal';
     
-    this.overlay.innerHTML = \
+    this.overlay.innerHTML = `
       <div class="modal-content promo-modal-content">
         <div class="modal-close" id="promo-close">&times;</div>
         <div class="promo-badge">-15%</div>
@@ -42,7 +42,7 @@ export class PromoModal {
           <button type="submit" class="btn btn-primary btn-block">Отримати знижку</button>
         </form>
       </div>
-    \;
+    `;
 
     document.body.appendChild(this.overlay);
 
@@ -86,12 +86,12 @@ export class PromoModal {
     submitBtn.disabled = true;
 
     try {
-      let message = \🎁 <b>Нова заявка на ЗНИЖКУ 15%!</b>\n\n\;
-      message += \👤 <b>Ім'я:</b> \\n\;
-      message += \📞 <b>Телефон:</b> \\n\;
-      message += \🎯 <b>Джерело:</b> \\n\;
+      let message = `🎁 <b>Нова заявка на ЗНИЖКУ 15%!</b>\n\n`;
+      message += `👤 <b>Ім'я:</b> ${name}\n`;
+      message += `📞 <b>Телефон:</b> ${phone}\n`;
+      message += `🎯 <b>Джерело:</b> ${subject}\n`;
 
-      const response = await fetch(\https://api.telegram.org/bot\/sendMessage\, {
+      const response = await fetch(`https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
