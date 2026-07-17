@@ -67,3 +67,15 @@
 .btn-block {
   width: 100%;
 }
+
+.form-control.invalid {
+  border-color: var(--color-secondary, #e60023);
+  background-color: rgba(230, 0, 35, 0.05);
+}
+
+.error-message {
+  color: var(--color-secondary, #e60023);
+  font-size: 0.8rem;
+  margin-top: 5px;
+  text-align: left;
+}

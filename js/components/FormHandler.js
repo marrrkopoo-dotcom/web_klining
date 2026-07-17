@@ -1,4 +1,5 @@
 import { Notification } from './Notification.js';
+import { validateName, validatePhone, showError, clearError, setupRealtimeValidation } from '../utils/validation.js?v=3.0';
 
 export class FormHandler {
   constructor(cart, modal) {
@@ -17,11 +18,41 @@ export class FormHandler {
   init() {
     if (this.form) {
       this.form.addEventListener('submit', this.handleSubmit.bind(this));
+      
+      setupRealtimeValidation(this.form, [
+        { name: 'name', validator: validateName },
+        { name: 'phone', validator: validatePhone }
+      ]);
     }
   }
 
   async handleSubmit(e) {
     e.preventDefault();
+
+    const nameInput = this.form.querySelector('[name="name"]');
+    const phoneInput = this.form.querySelector('[name="phone"]');
+
+    const nameError = validateName(nameInput.value);
+    const phoneError = validatePhone(phoneInput.value);
+
+    let hasErrors = false;
+    if (nameError) {
+      showError(nameInput, nameError);
+      hasErrors = true;
+    } else {
+      clearError(nameInput);
+    }
+
+    if (phoneError) {
+      showError(phoneInput, phoneError);
+      hasErrors = true;
+    } else {
+      clearError(phoneInput);
+    }
+
+    if (hasErrors) {
+      return;
+    }
 
     const formData = new FormData(this.form);
     const name = formData.get('name');

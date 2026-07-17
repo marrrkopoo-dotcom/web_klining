@@ -1,4 +1,5 @@
 import { Notification } from './Notification.js?v=3.0';
+import { validateName, validatePhone, showError, clearError, setupRealtimeValidation } from '../utils/validation.js?v=3.0';
 
 export class PromoModal {
   constructor() {
@@ -58,6 +59,11 @@ export class PromoModal {
 
     const form = this.overlay.querySelector('#promo-form');
     form.addEventListener('submit', this.handleSubmit.bind(this));
+
+    setupRealtimeValidation(form, [
+      { name: 'name', validator: validateName },
+      { name: 'phone', validator: validatePhone }
+    ]);
   }
 
   open() {
@@ -74,6 +80,32 @@ export class PromoModal {
   async handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
+
+    const nameInput = form.querySelector('[name="name"]');
+    const phoneInput = form.querySelector('[name="phone"]');
+
+    const nameError = validateName(nameInput.value);
+    const phoneError = validatePhone(phoneInput.value);
+
+    let hasErrors = false;
+    if (nameError) {
+      showError(nameInput, nameError);
+      hasErrors = true;
+    } else {
+      clearError(nameInput);
+    }
+
+    if (phoneError) {
+      showError(phoneInput, phoneError);
+      hasErrors = true;
+    } else {
+      clearError(phoneInput);
+    }
+
+    if (hasErrors) {
+      return;
+    }
+
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.textContent;
     
