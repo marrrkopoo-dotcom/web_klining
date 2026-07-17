@@ -119,6 +119,14 @@
   </div>
 
   <!-- Main JS using ES Modules for OOP -->
-  <script type="module" src="js_v4/main.js?v=3.0"></script>
+  
+  <script>
+    (function() {
+      var script = document.createElement('script');
+      script.src = "js/script.js?v=" + new Date().getTime();
+      script.defer = true;
+      document.body.appendChild(script);
+    })();
+  </script>
 </body>
 </html>
