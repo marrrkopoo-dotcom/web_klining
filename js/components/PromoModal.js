@@ -1,4 +1,4 @@
-﻿import { Notification } from './Notification.js?v=2.0';
+﻿import { Notification } from './Notification.js';
 
 export class PromoModal {
   constructor() {
