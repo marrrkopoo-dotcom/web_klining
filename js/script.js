@@ -804,8 +804,10 @@ class App {
 }
 
 /* --- main.js --- */
-
-
-document.addEventListener('DOMContentLoaded', () => {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    new App();
+  });
+} else {
   new App();
-});
+}
