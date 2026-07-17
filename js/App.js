@@ -4,6 +4,7 @@ import { Menu } from './components/Menu.js?v=3.0';
 import { Modal } from './components/Modal.js?v=3.0';
 import { Cart } from './components/Cart.js?v=3.0';
 import { FormHandler } from './components/FormHandler.js?v=3.0';
+import { initPhoneInputs } from './utils/validation.js?v=3.0';
 
 export class App {
   constructor() {
@@ -11,6 +12,7 @@ export class App {
   }
 
   initComponents() {
+    initPhoneInputs();
     this.cookieBanner = new CookieBanner();
     this.promoModal = new PromoModal();
     // Initialize Mobile Menu

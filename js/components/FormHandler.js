@@ -67,7 +67,7 @@ export class FormHandler {
     try {
       let message = `🔔 <b>Нова заявка з сайту Клінко!</b>\n\n`;
       message += `👤 <b>Ім'я:</b> ${name}\n`;
-      message += `📞 <b>Телефон:</b> ${phone}\n`;
+      message += `📞 <b>Телефон:</b> +380 ${phone}\n`;
       message += `🎯 <b>Тема:</b> ${subject}\n`;
 
       const { totalSum, totalItems } = this.cart.calculateTotal();

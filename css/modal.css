@@ -79,3 +79,26 @@
   margin-top: 5px;
   text-align: left;
 }
+
+/* Phone input wrapper with Ukrainian flag */
+.phone-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.phone-prefix {
+  position: absolute;
+  left: 12px;
+  font-size: 0.95rem;
+  color: var(--color-text-dark);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.phone-input-wrapper .form-control {
+  padding-left: 75px !important;
+}

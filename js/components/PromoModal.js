@@ -1,5 +1,5 @@
 import { Notification } from './Notification.js?v=3.0';
-import { validateName, validatePhone, showError, clearError, setupRealtimeValidation } from '../utils/validation.js?v=3.0';
+import { validateName, validatePhone, showError, clearError, setupRealtimeValidation, initPhoneInputs } from '../utils/validation.js?v=3.0';
 
 export class PromoModal {
   constructor() {
@@ -59,6 +59,8 @@ export class PromoModal {
 
     const form = this.overlay.querySelector('#promo-form');
     form.addEventListener('submit', this.handleSubmit.bind(this));
+
+    initPhoneInputs();
 
     setupRealtimeValidation(form, [
       { name: 'name', validator: validateName },
@@ -120,7 +122,7 @@ export class PromoModal {
     try {
       let message = `🎁 <b>Нова заявка на ЗНИЖКУ 15%!</b>\n\n`;
       message += `👤 <b>Ім'я:</b> ${name}\n`;
-      message += `📞 <b>Телефон:</b> ${phone}\n`;
+      message += `📞 <b>Телефон:</b> +380 ${phone}\n`;
       message += `🎯 <b>Джерело:</b> ${subject}\n`;
 
       const response = await fetch(`https://api.telegram.org/bot${this.BOT_TOKEN}/sendMessage`, {
