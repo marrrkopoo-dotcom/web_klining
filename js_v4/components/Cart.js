@@ -39,8 +39,8 @@ export class Cart {
         btnPlus.addEventListener('click', () => {
           let val = parseInt(inputQty.value) || 0;
           const unit = item.dataset.unit;
-          if (unit === 'кв.м' && val >= 900) {
-            this.notification.show("Максимальна площа для замовлення — 900 кв.м", "error");
+          if (unit === 'м²' && val >= 900) {
+            this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
             return;
           }
           inputQty.value = val + 1;
@@ -49,9 +49,9 @@ export class Cart {
         inputQty.addEventListener('input', () => {
           let val = parseFloat(inputQty.value) || 0;
           const unit = item.dataset.unit;
-          if (unit === 'кв.м' && val > 900) {
+          if (unit === 'м²' && val > 900) {
             inputQty.value = 900;
-            this.notification.show("Максимальна площа для замовлення — 900 кв.м", "error");
+            this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
           }
         });
       }
@@ -63,8 +63,8 @@ export class Cart {
         const unit = item.dataset.unit;
         const qty = parseFloat(inputQty.value);
 
-        if (unit === 'кв.м' && qty > 900) {
-          this.notification.show("Максимальна площа для онлайн-замовлення — 900 кв.м. Для більшої площі зв'яжіться з нами по телефону.", "error");
+        if (unit === 'м²' && qty > 900) {
+          this.notification.show("Максимальна площа для онлайн-замовлення — 900 м². Для більшої площі зв'яжіться з нами по телефону.", "error");
           return;
         }
 
