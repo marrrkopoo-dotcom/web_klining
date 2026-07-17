@@ -339,9 +339,13 @@ class Cart {
         const unit = item.dataset.unit;
         const qty = parseFloat(inputQty.value);
 
-        if (unit === 'м²' && qty > 900) {
-          this.notification.show("Максимальна площа для онлайн-замовлення — 900 м². Для більшої площі зв'яжіться з нами по телефону.", "error");
-          return;
+        if (unit === 'м²') {
+          const currentTotal = this.getTotalSqMetersInCart();
+          if (currentTotal + qty > 900) {
+            const allowed = Math.max(0, 900 - currentTotal);
+            this.notification.show(`Загальна площа в кошику не може перевищувати 900 м². Ви можете додати ще максимум ${allowed} м². Для більшої площі зв'яжіться з нами по телефону.`, "error");
+            return;
+          }
         }
 
         if (qty > 0) {
@@ -406,6 +410,16 @@ class Cart {
     this.items = {};
     this.saveCart();
     this.updateUI();
+  }
+
+  getTotalSqMetersInCart() {
+    let totalSqM = 0;
+    for (const key in this.items) {
+      if (this.items[key].unit === 'м²') {
+        totalSqM += this.items[key].qty;
+      }
+    }
+    return totalSqM;
   }
 
   calculateTotal() {
