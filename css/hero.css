@@ -1,33 +1,23 @@
 /* Hero Section */
 .hero {
   position: relative;
-  padding-top: 100px;
-  padding-bottom: 50px;
-  background: var(--color-bg-light);
+  padding-top: 150px;
+  padding-bottom: 100px;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.9)), url('../assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .va-poslugi-top {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: var(--spacing-xl);
-  flex-wrap: wrap-reverse;
-}
-
-.va-poslugi-top__img {
-  flex: 1;
-  min-width: 300px;
-}
-
-.va-poslugi-top__img img {
-  width: 100%;
-  border-radius: var(--border-radius-lg);
-  box-shadow: var(--shadow-lg);
-  object-fit: cover;
 }
 
 .va-poslugi-top__text {
-  flex: 1;
-  min-width: 300px;
+  max-width: 800px;
+  text-align: center;
   color: var(--color-text-dark);
 }
 
@@ -40,7 +30,7 @@
 }
 
 .va-poslugi-top__text h1 span {
-  color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .va-poslugi-top__text .callback,
