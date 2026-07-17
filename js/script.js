@@ -319,6 +319,10 @@ class Cart {
             this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
             return;
           }
+          if (unit === 'шт' && val >= 10) {
+            this.notification.show("Максимальна кількість для одного товару — 10 шт", "error");
+            return;
+          }
           inputQty.value = val + 1;
         });
         
@@ -328,6 +332,10 @@ class Cart {
           if (unit === 'м²' && val > 900) {
             inputQty.value = 900;
             this.notification.show("Максимальна площа для замовлення — 900 м²", "error");
+          }
+          if (unit === 'шт' && val > 10) {
+            inputQty.value = 10;
+            this.notification.show("Максимальна кількість для одного товару — 10 шт", "error");
           }
         });
       }
@@ -344,6 +352,15 @@ class Cart {
           if (currentTotal + qty > 900) {
             const allowed = Math.max(0, 900 - currentTotal);
             this.notification.show(`Загальна площа в кошику не може перевищувати 900 м². Ви можете додати ще максимум ${allowed} м². Для більшої площі зв'яжіться з нами по телефону.`, "error");
+            return;
+          }
+        }
+
+        if (unit === 'шт') {
+          const currentItemQty = this.items[id] ? this.items[id].qty : 0;
+          if (currentItemQty + qty > 10) {
+            const allowed = Math.max(0, 10 - currentItemQty);
+            this.notification.show(`Максимальна кількість для послуги "${name}" — 10 шт. Ви можете додати ще ${allowed} шт.`, "error");
             return;
           }
         }
