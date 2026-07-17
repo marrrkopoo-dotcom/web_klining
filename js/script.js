@@ -316,11 +316,11 @@ class Cart {
           let val = parseInt(inputQty.value) || 0;
           const unit = item.dataset.unit;
           if (unit === 'м²' && val >= 900) {
-            this.notification.show("Максимальна площа для замовлення 900 м²", "error");
+            this.notification.show("Максимальна площа для замовлення - 900 м²", "error");
             return;
           }
           if (unit === 'шт' && val >= 10) {
-            this.notification.show("Максимальна кількість для одного товару 10 шт", "error");
+            this.notification.show("Максимальна кількість для одного товару - 10 шт", "error");
             return;
           }
           inputQty.value = val + 1;
@@ -331,11 +331,11 @@ class Cart {
           const unit = item.dataset.unit;
           if (unit === 'м²' && val > 900) {
             inputQty.value = 900;
-            this.notification.show("Максимальна площа для замовлення 900 м²", "error");
+            this.notification.show("Максимальна площа для замовлення - 900 м²", "error");
           }
           if (unit === 'шт' && val > 10) {
             inputQty.value = 10;
-            this.notification.show("Максимальна кількість для одного товару 10 шт", "error");
+            this.notification.show("Максимальна кількість для одного товару - 10 шт", "error");
           }
         });
       }
@@ -360,7 +360,7 @@ class Cart {
           const currentItemQty = this.items[id] ? this.items[id].qty : 0;
           if (currentItemQty + qty > 10) {
             const allowed = Math.max(0, 10 - currentItemQty);
-            this.notification.show(`Максимальна кількість для послуги "${name}" 10 шт. Ви можете додати ще ${allowed} шт.`, "error");
+            this.notification.show(`Максимальна кількість для послуги "${name}" - 10 шт. Ви можете додати ще ${allowed} шт.`, "error");
             return;
           }
         }
