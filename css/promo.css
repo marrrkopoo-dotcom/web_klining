@@ -1,0 +1,23 @@
+﻿.promo-modal-content {
+  text-align: center;
+}
+
+.promo-badge {
+  display: inline-block;
+  background: var(--color-secondary, #e60023);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 800;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 15px rgba(230, 0, 35, 0.4);
+  transform: rotate(-3deg);
+}
+
+.promo-text {
+  font-size: 1rem;
+  color: var(--color-text-dark);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}

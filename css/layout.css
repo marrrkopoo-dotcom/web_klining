@@ -37,16 +37,18 @@
   transition: all var(--transition-fast);
 }
 
-.btn-primary {
+.btn-primary,
+.btn-primary:visited,
+.btn-primary:active {
   background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: var(--color-text-light);
+  color: var(--color-text-light) !important;
   box-shadow: var(--shadow-sm);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-md);
-  color: var(--color-text-light);
+  color: var(--color-text-light) !important;
 }
 
 .btn-outline {

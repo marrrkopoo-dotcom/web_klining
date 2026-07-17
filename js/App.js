@@ -1,3 +1,5 @@
+﻿import { CookieBanner } from './components/CookieBanner.js';
+import { PromoModal } from './components/PromoModal.js';
 import { Menu } from './components/Menu.js';
 import { Modal } from './components/Modal.js';
 import { Cart } from './components/Cart.js';
@@ -9,6 +11,8 @@ export class App {
   }
 
   initComponents() {
+    this.cookieBanner = new CookieBanner();
+    this.promoModal = new PromoModal();
     // Initialize Mobile Menu
     this.menu = new Menu('.hamburger', '.nav-mobile');
 
