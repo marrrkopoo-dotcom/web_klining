@@ -51,15 +51,6 @@ function validateName(name) {
   if (!nameRegex.test(trimmed)) {
     return 'Ім\'я повинно містити тільки літери';
   }
-  
-  // Enforce capitalization: each word must start with an uppercase letter
-  const words = trimmed.split(/\s+/);
-  const capitalRegex = /^[A-ZА-ЯЁІЇЄҐ]/;
-  for (const word of words) {
-    if (!capitalRegex.test(word)) {
-      return 'Кожне слово повинно починатися з великої літери';
-    }
-  }
   return null;
 }
 
